@@ -1,0 +1,32 @@
+{
+  "name": "podcasts-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start:dev": "tsx src/server.ts",
+    "start:watch": "tsx watch src/server.ts",
+    "dist": "tsup src",
+    "start:dist": "npm run dist && node/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmevictorhugo/podcasts-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/itsmevictorhugo/podcasts-manager/issues"
+  },
+  "homepage": "https://github.com/itsmevictorhugo/podcasts-manager#readme",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
