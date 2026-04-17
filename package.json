@@ -7,10 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start:dev": "tsx src/server.ts",
-    "start:watch": "tsx watch src/server.ts",
+    "start:dev": "tsx --env-file=.env src/server.ts",
+    "start:watch": "tsx --env-file=.env watch src/server.ts",
     "dist": "tsup src",
-    "start:dist": "npm run dist && node/server.js"
+    "start:dist": "npm run dist && --env-file=.env node/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/itsmevictorhugo/podcasts-manager/issues"
   },
   "homepage": "https://github.com/itsmevictorhugo/podcasts-manager#readme",
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
