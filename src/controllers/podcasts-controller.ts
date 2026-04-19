@@ -1,19 +1,8 @@
 import { IncomingMessage, ServerResponse} from 'http';
+import { serviceListEpisodes } from '../services/list-episodes-service';
 
 export const getListEpisodes = async (request: IncomingMessage, response: ServerResponse) => {
+  const content = await serviceListEpisodes();
   response.writeHead(200, {'content-type': "application/json"})
-  response.end(JSON.stringify([
-    {
-      podcastName: "Flow",
-      episode: "FABIO AKITA - Flow #588",
-      videoId: "4c7pbOxYn_A",
-      categories: ["dev", "AI"]
-    },
-    {
-      podcastName: "Inteligência Ltda",
-      episode: "SUPERINTELIGÊNCIA ARTIFICIAL - AKITA, ROBERTA E CAVALLINI - Inteligência Ltda.Podcast #1583",
-      videoId: "_Hl9wiLkns4",
-      categories: ["dev", "AI"]
-    }
-  ]))
+  response.end(JSON.stringify(content))
 }
