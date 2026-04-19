@@ -1,4 +1,4 @@
-export default interface Podcast {
+export default interface PodcastModel {
     podcastName: string;
     episode: string;
     videoId: string;
